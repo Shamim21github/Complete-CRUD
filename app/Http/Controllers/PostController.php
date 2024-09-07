@@ -64,7 +64,7 @@ class PostController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Post $post)
     {
         $request->validate([
             'title' => 'required|max:255',
@@ -78,9 +78,5 @@ class PostController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Post $post)
-    {
-        $post->delete();
-        return reditect()->route('posts.index')->with('Posts Successfully Deleted');
-    }
+  
 }
